@@ -1,0 +1,5 @@
+私钥：密码  123456
+
+shishi.pfx：是自己生成的私钥
+gongshi.cer  是自己生成的公钥
+baofu.cer 是宝付下载的公钥

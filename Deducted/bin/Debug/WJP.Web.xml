@@ -1,0 +1,769 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WJP.Web</name>
+    </assembly>
+    <members>
+        <member name="T:WJP.Web.AuthHelper">
+            <summary>
+            授权助手
+            </summary>
+        </member>
+        <member name="F:WJP.Web.AuthHelper._actionCache">
+            <summary>
+            动作缓存
+            </summary>
+        </member>
+        <member name="F:WJP.Web.AuthHelper._areaCache">
+            <summary>
+            区域缓存
+            </summary>
+        </member>
+        <member name="M:WJP.Web.AuthHelper.readAreasFromCache">
+            <summary>
+            读取区域
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WJP.Web.AuthHelper.readControllersFromCache(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            读取控制器
+            </summary>
+            <param name="baseName">基类名称</param>
+            <param name="assemblyNames">指定程序集</param>
+            <returns></returns>
+        </member>
+        <member name="M:WJP.Web.AuthHelper.getFilteredActionsFromAssemblies(System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            从程序集中获取动作
+            </summary>
+            <param name="baseName">基类名称</param>
+            <param name="cacheName">缓存名称</param>
+            <param name="assemblyNames">指定程序集</param>
+            <returns></returns>
+        </member>
+        <member name="F:WJP.Web.AuthHelper._displayname">
+            <summary>
+            动作说明 缓存后缀名
+            </summary>
+        </member>
+        <member name="M:WJP.Web.AuthHelper.readDisplayFromCache(System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            读取说明
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WJP.Web.AuthHelper.getDisplayFromAssemblies(System.Collections.Generic.List{WJP.Web.MvcActionInfo})">
+            <summary>
+            从程序集中获取说明
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WJP.Web.AuthIgnore">
+            <summary>
+            忽略判断权限
+            </summary>
+        </member>
+        <member name="T:WJP.Web.MvcActionInfo">
+            <summary>
+            Mvc动作信息
+            </summary>
+        </member>
+        <member name="P:WJP.Web.MvcActionInfo.display">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="P:WJP.Web.MvcActionInfo.area">
+            <summary>
+            所属区域
+            </summary>
+        </member>
+        <member name="P:WJP.Web.MvcActionInfo.controllerAction">
+            <summary>
+            控制器动作 Controllers|Action
+            </summary>
+        </member>
+        <member name="P:WJP.Web.MvcActionInfo.typeOf">
+            <summary>
+            类型
+            </summary>
+        </member>
+        <member name="P:WJP.Web.MvcActionInfo.children">
+            <summary>
+            子动作
+            </summary>
+        </member>
+        <member name="T:WJP.Web.TypeOf">
+            <summary>
+            类型的类型
+            </summary>
+        </member>
+        <member name="T:WJP.Web.CustomViewEngine">
+            <summary>
+            自定义视频引擎
+            </summary>
+        </member>
+        <member name="T:WJP.Web.GenderBaseData">
+            <summary>
+            基础数据
+            </summary>
+        </member>
+        <member name="M:WJP.Web.GenderBaseData.getDept(WJP.Web.ParamsByDept)">
+            <summary>
+            生成部门数据控件一般用于添加编辑页面便于赋值
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WJP.Web.GenderBaseData.getRole(WJP.Web.ParamsByRole)">
+            <summary>
+            生成角色数据控件一般用于添加编辑页面便于赋值
+            </summary>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WJP.Web.Params">
+            <summary>
+            按钮参数
+            </summary>
+        </member>
+        <member name="P:WJP.Web.Params.engName">
+            <summary>
+            英文标识名
+            </summary>
+        </member>
+        <member name="P:WJP.Web.Params.controlName">
+            <summary>
+            生成控件的Name和ID
+            </summary>
+        </member>
+        <member name="P:WJP.Web.Params.queryOptions">
+            <summary>
+            查询参数字符串
+            </summary>
+        </member>
+        <member name="P:WJP.Web.Params.ids">
+            <summary>
+            需要选中的IDS
+            </summary>
+        </member>
+        <member name="P:WJP.Web.Params.isMult">
+            <summary>
+            是否多选 
+            </summary>
+        </member>
+        <member name="P:WJP.Web.Params.isSel">
+            <summary>
+            是否显示提示文字
+            </summary>
+        </member>
+        <member name="P:WJP.Web.Params.isRequired">
+            <summary>
+            是否需要验证
+            </summary>
+        </member>
+        <member name="P:WJP.Web.Params.height">
+            <summary>
+            控件高
+            </summary>
+        </member>
+        <member name="P:WJP.Web.Params.width">
+            <summary>
+            控件款
+            </summary>
+        </member>
+        <member name="T:WJP.Web.ParamsByDept">
+            <summary>
+            按钮参数
+            </summary>
+        </member>
+        <member name="P:WJP.Web.ParamsByDept.type">
+            <summary>
+            类别1正常部门、2包含特殊部门
+            </summary>
+        </member>
+        <member name="P:WJP.Web.ParamsByDept.controlName">
+            <summary>
+            生成控件的Name和ID
+            </summary>
+        </member>
+        <member name="P:WJP.Web.ParamsByDept.ids">
+            <summary>
+            需要选中的IDS
+            </summary>
+        </member>
+        <member name="P:WJP.Web.ParamsByDept.isMult">
+            <summary>
+            是否多选 
+            </summary>
+        </member>
+        <member name="P:WJP.Web.ParamsByDept.isSel">
+            <summary>
+            是否显示提示文字
+            </summary>
+        </member>
+        <member name="P:WJP.Web.ParamsByDept.isRequired">
+            <summary>
+            是否需要验证
+            </summary>
+        </member>
+        <member name="P:WJP.Web.ParamsByDept.height">
+            <summary>
+            控件高
+            </summary>
+        </member>
+        <member name="P:WJP.Web.ParamsByDept.width">
+            <summary>
+            控件款
+            </summary>
+        </member>
+        <member name="T:WJP.Web.ParamsByRole">
+            <summary>
+            按钮参数
+            </summary>
+        </member>
+        <member name="P:WJP.Web.ParamsByRole.type">
+            <summary>
+            类别
+            </summary>
+        </member>
+        <member name="P:WJP.Web.ParamsByRole.controlName">
+            <summary>
+            生成控件的Name和ID
+            </summary>
+        </member>
+        <member name="P:WJP.Web.ParamsByRole.ids">
+            <summary>
+            需要选中的IDS
+            </summary>
+        </member>
+        <member name="P:WJP.Web.ParamsByRole.isMult">
+            <summary>
+            是否多选 
+            </summary>
+        </member>
+        <member name="P:WJP.Web.ParamsByRole.isSel">
+            <summary>
+            是否显示提示文字
+            </summary>
+        </member>
+        <member name="P:WJP.Web.ParamsByRole.isRequired">
+            <summary>
+            是否需要验证
+            </summary>
+        </member>
+        <member name="P:WJP.Web.ParamsByRole.height">
+            <summary>
+            控件高
+            </summary>
+        </member>
+        <member name="P:WJP.Web.ParamsByRole.width">
+            <summary>
+            控件款
+            </summary>
+        </member>
+        <member name="T:WJP.Web.LogIgnore">
+            <summary>
+            忽略记录日志
+            </summary>
+        </member>
+        <member name="T:WJP.Web.MvcLogHelper">
+            <summary>
+            Mvc日志助手
+            </summary>
+        </member>
+        <member name="M:WJP.Web.MvcLogHelper.writeException(System.Web.Mvc.ExceptionContext)">
+            <summary>
+            记录Mvc的异常
+            </summary>
+            <param name="filterContext"></param>
+        </member>
+        <member name="M:WJP.Web.MvcLogHelper.writeMessage(System.Web.Mvc.ControllerContext,System.String)">
+            <summary>
+            记录Mvc的错误信息
+            </summary>
+            <param name="filterContext"></param>
+            <param name="str"></param>
+        </member>
+        <member name="T:WJP.Web.MVCQueryHelper">
+            <summary>
+            MVC参数帮助
+            </summary>
+        </member>
+        <member name="M:WJP.Web.MVCQueryHelper.MvcSetValue``1(``0)">
+            <summary>
+            MVC为实体赋值 wirte by 吴俊鹏
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:WJP.Web.CookieUtil">
+            <summary>
+            Cookie助手类
+            </summary>
+        </member>
+        <member name="M:WJP.Web.CookieUtil.isCookie(System.String)">
+            <summary>
+            判断Cookie是否存在
+            </summary>
+            <param name="cookieName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WJP.Web.CookieUtil.getCookie(System.String)">
+            <summary>
+            读取Cookie
+            </summary>
+            <param name="cookieName">要读取的Cookie名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:WJP.Web.CookieUtil.get(System.String)">
+            <summary>
+            读取Cookie值
+            </summary>
+            <param name="cookieName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WJP.Web.CookieUtil.clear(System.String)">
+            <summary>
+            清除Cookie
+            </summary>
+        </member>
+        <member name="M:WJP.Web.CookieUtil.saveCookie(System.String,System.String,System.Int32)">
+            <summary>   
+            保存Cookie
+            </summary>   
+            <param name="cookieName">Cookie名称</param>   
+            <param name="cookieValue">Cookie值</param>   
+            <param name="cookieTime">Cookie过期时间(小时),0为关闭页面失效</param>
+        </member>
+        <member name="M:WJP.Web.CookieUtil.saveCookie(System.Web.HttpCookie)">
+            <summary>
+            保存Cookie
+            </summary>
+            <param name="myCookie"></param>
+        </member>
+        <member name="M:WJP.Web.CookieUtil.setCookie(System.String,System.String)">
+            <summary>
+            设置Cookie
+            </summary>
+            <param name="cookieName">Cookie名称</param>
+            <param name="serializeString">序列化字符串</param>
+        </member>
+        <member name="M:WJP.Web.CookieUtil.setCookie(System.String,System.String,System.Int32)">
+            <summary>
+            设置Cookie
+            </summary>
+            <param name="cookieName">Cookie名称</param>
+            <param name="serializeString">序列化字符串</param>
+            <param name="cookHourTime">过期时间 小时</param>
+        </member>
+        <member name="M:WJP.Web.CookieUtil.setCookie(System.String,System.String,System.Int32,WJP.Util.EncryptionType)">
+            <summary>
+            设置Cookie
+            </summary>
+            <param name="cookieName">Cookie名称</param>
+            <param name="serializeString">序列化字符串</param>
+            <param name="cookHourTime">过期时间 小时</param>
+            <param name="enType">加密方式</param>
+        </member>
+        <member name="M:WJP.Web.CookieUtil.forCookie``1(System.String)">
+            <summary>
+            获取Cookie并转换对象 使用DES加密方式
+            </summary>
+            <typeparam name="T">对象类型</typeparam>
+            <param name="cookieName">cookie名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:WJP.Web.CookieUtil.forCookie``1(System.String,WJP.Util.EncryptionType)">
+            <summary>
+            获取Cookie并转换对象
+            </summary>
+            <typeparam name="T">对象类型</typeparam>
+            <param name="cookieName">cookie名称</param>
+            <param name="enType">解密类型</param>
+            <returns></returns>
+        </member>
+        <member name="T:WJP.Web.HttpContextHelper">
+            <summary>
+            请求上下文帮助类
+            </summary>
+        </member>
+        <member name="M:WJP.Web.HttpContextHelper.GetIP">
+            <summary>
+            获取请求来路的IP
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WJP.Web.SessionUtil">
+            <summary>
+            Session助手
+            </summary>
+        </member>
+        <member name="M:WJP.Web.SessionUtil.isSession(System.String)">
+            <summary>
+            判断Session是否存在
+            </summary>
+            <param name="sessionName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WJP.Web.SessionUtil.getSessionValue(System.String)">
+            <summary>
+            读取Session
+            </summary>
+            <param name="sessionName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WJP.Web.SessionUtil.saveSession(System.String,System.String)">
+            <summary>
+            保存Session
+            </summary>
+            <param name="keyName"></param>
+            <param name="Value"></param>
+        </member>
+        <member name="M:WJP.Web.SessionUtil.setSeeion(System.String,System.Object)">
+            <summary>
+            序列化对象后保存到session
+            </summary>
+            <param name="keyName"></param>
+            <param name="obj"></param>
+        </member>
+        <member name="M:WJP.Web.SessionUtil.delSession(System.String)">
+            <summary>
+            删除Session
+            </summary>
+            <param name="SessionName"></param>
+        </member>
+        <member name="M:WJP.Web.SessionUtil.forSession``1(System.String)">
+            <summary>
+            获取Session并转换对象
+            </summary>
+            <typeparam name="T">对象类型</typeparam>
+            <param name="sessionName">session名称</param>
+            <returns></returns>
+        </member>
+        <member name="T:WJP.Web.WebRoot">
+            <summary>
+            Web路径
+            </summary>
+        </member>
+        <member name="P:WJP.Web.WebRoot.appRoot">
+            <summary>
+            程序虚拟路径
+            获取本程序安装的虚拟路径，始终不以/结尾。如果安装在根目录，将返回空字符串
+            </summary>
+        </member>
+        <member name="P:WJP.Web.WebRoot.applicationPath">
+            <summary>
+            应用程序物理根路径
+            </summary>
+        </member>
+        <member name="P:WJP.Web.WebRoot.rawUrl">
+            <summary>
+            获取当前请求的原始URL
+            </summary>
+        </member>
+        <member name="P:WJP.Web.WebRoot.absoluteUri">
+            <summary>
+            获取当前请求的绝对URL
+            </summary>
+        </member>
+        <member name="P:WJP.Web.WebRoot.query">
+            <summary>
+            获取当前查询信息
+            </summary>
+        </member>
+        <member name="P:WJP.Web.WebRoot.urlReferrer">
+            <summary>
+            客户端上次请求的URL
+            </summary>
+        </member>
+        <member name="P:WJP.Web.WebRoot.absolutePath">
+            <summary>
+            获取URL的绝对路径
+            </summary>
+        </member>
+        <member name="P:WJP.Web.WebRoot.clientIP">
+            <summary>
+            获取客户端IP
+            </summary>
+        </member>
+        <member name="M:WJP.Web.WebRoot.getMapPath(System.String)">
+            <summary>
+            获取物理路径
+            </summary>
+            <param name="strPath"></param>
+            <returns></returns>
+            <remarks>Add By 万里涛 at 2014.4.15</remarks>
+        </member>
+        <member name="P:WJP.Web.WebRoot.serverHost">
+            <summary>
+            获取服务器域名或IP地址和端口
+            </summary>
+            <remarks>Add By 万里涛 at 2014.4.16</remarks>
+        </member>
+        <member name="T:WJP.Web.SqlPageInfo">
+            <summary>
+            SqlPageInfo 的摘要说明。
+            </summary>
+        </member>
+        <member name="M:WJP.Web.SqlPageInfo.#ctor">
+            <summary>
+            构造器
+            </summary>
+        </member>
+        <member name="P:WJP.Web.SqlPageInfo.Filter">
+            <summary>查询条件集合</summary>
+        </member>
+        <member name="P:WJP.Web.SqlPageInfo.SelectCondtion">
+            <summary>查询的条件</summary>
+        </member>
+        <member name="P:WJP.Web.SqlPageInfo.ToPageData">
+            <summary>是否启用分页</summary>
+        </member>
+        <member name="P:WJP.Web.SqlPageInfo.PageTotleRowCount">
+            <summary>总记录数</summary>
+        </member>
+        <member name="P:WJP.Web.SqlPageInfo.TextCondtion">
+            <summary>查询文本</summary>
+        </member>
+        <member name="P:WJP.Web.SqlPageInfo.PageSize">
+            <summary>每页记录数</summary>
+        </member>
+        <member name="P:WJP.Web.SqlPageInfo.PageIndex">
+            <summary>当前页码</summary>
+        </member>
+        <member name="P:WJP.Web.SqlPageInfo.SelectOrder">
+            <summary>排序的ORDER</summary>
+        </member>
+        <member name="P:WJP.Web.SqlPageInfo.SelectField">
+            <summary>查询字段</summary>
+        </member>
+        <member name="P:WJP.Web.SqlPageInfo.Predicate">
+            <summary>查询条件</summary>
+        </member>
+        <member name="P:WJP.Web.SqlPageInfo.PredicateValue">
+            <summary>查询条件</summary>
+        </member>
+        <member name="P:WJP.Web.SqlPageInfo.QueryTerm">
+            <summary>查询条件</summary>
+        </member>
+        <member name="M:WJP.Web.SqlPageInfo.addFilter(System.Collections.Generic.List{WJP.Web.FilterChilde})">
+            <summary>
+            添加过滤条件
+            </summary>
+            <param name="filter"></param>
+        </member>
+        <member name="M:WJP.Web.SqlPageInfo.addFilter(WJP.Web.FilterChilde[])">
+            <summary>
+            添加过滤条件
+            </summary>
+            <param name="filter"></param>
+        </member>
+        <member name="T:WJP.Web.PredicateInfo">
+            <summary>查询类for梅鹏</summary>
+        </member>
+        <member name="P:WJP.Web.PredicateInfo.QueryField">
+            <summary>查询条件
+            </summary>
+        </member>
+        <member name="P:WJP.Web.PredicateInfo.QueryType">
+            <summary>条件类别
+            </summary>
+        </member>
+        <member name="P:WJP.Web.PredicateInfo.QueryValue">
+            <summary>条件值
+            </summary>
+        </member>
+        <member name="P:WJP.Web.PredicateInfo.QueryContract">
+            <summary>条件运算
+            </summary>
+        </member>
+        <member name="T:WJP.Web.FilterChilde">
+            <summary>查询子类配合分组的情况而启用FilterChilde</summary>
+        </member>
+        <member name="P:WJP.Web.FilterChilde.ljf">
+            <summary>链接符(默认and)</summary>
+        </member>
+        <member name="P:WJP.Web.FilterChilde.filedType">
+            <summary>字段类型(默认String)</summary>
+        </member>
+        <member name="P:WJP.Web.FilterChilde.Key">
+            <summary>查询比较的字段名</summary>
+        </member>
+        <member name="P:WJP.Web.FilterChilde.Value">
+            <summary>查询比较的值</summary>
+        </member>
+        <member name="P:WJP.Web.FilterChilde.Contract">
+            <summary>过滤的约束 比如：>  >=   like等 </summary>
+        </member>
+        <member name="T:WJP.Web.Filter">
+            <summary>查询类</summary>
+        </member>
+        <member name="P:WJP.Web.Filter.ljf">
+            <summary>连接符(默认and)</summary>
+        </member>
+        <member name="P:WJP.Web.Filter.isGroup">
+            <summary>是否分组(默认false)</summary>
+        </member>
+        <member name="P:WJP.Web.Filter.list">
+            <summary>子集为了配合分组的情况而启用子集</summary>
+        </member>
+        <member name="T:WJP.Web.UploadUtil">
+            <summary>
+            上传核心服务
+            </summary>
+        </member>
+        <member name="M:WJP.Web.UploadUtil.validFileSize(System.Byte[],System.Int32)">
+            <summary>
+            校验文件大小
+            </summary>
+            <param name="fileBytes">文件二进制数组</param>
+            <param name="maxFileSize">最大文件大小</param>
+            <returns></returns>
+        </member>
+        <member name="M:WJP.Web.UploadUtil.validFileExt(System.String,System.String)">
+            <summary>
+            校验文件扩展名
+            </summary>
+            <param name="fileNameExt">原始文件名中扩展名</param>
+            <param name="allowFileExtStr">允许文件扩展名列表</param>
+            <returns></returns>
+        </member>
+        <member name="M:WJP.Web.UploadUtil.validFileHeader(System.Byte[],System.String)">
+            <summary>
+            校验文件头
+            </summary>
+            <param name="fileBytes">文件二进制数组</param>
+            <param name="fileNameExt">文件名中扩展名</param>
+            <returns></returns>
+        </member>
+        <member name="M:WJP.Web.UploadUtil.getFileExtFromHeader(System.Byte[])">
+            <summary>
+            通过文件头获取文件类型
+            </summary>
+            <param name="fileBytes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WJP.Web.UploadUtil.saveUploadFile(System.Byte[],System.String,System.String)">
+            <summary>
+            保存上传文件
+            </summary>
+            <param name="fileBytes">文件二进制数组</param>
+            <param name="saveVirtualPath">上传虚拟路径</param>
+            <param name="saveFileName">保存文件名</param>
+            <returns></returns>
+        </member>
+        <member name="M:WJP.Web.UploadUtil.validUploadPath(System.String,System.String)">
+            <summary>
+            校验上传路径
+            </summary>
+            <param name="saveVirtualPath">保存虚拟目录</param>
+            <param name="saveFileName">保存文件名</param>
+            <returns></returns>
+        </member>
+        <member name="T:WJP.Web.FileExtType">
+            <summary>
+            文件扩展名枚举
+            </summary>
+        </member>
+        <member name="T:WJP.Web.PassWordInfo">
+            <summary>
+            密码修改
+            </summary>
+        </member>
+        <member name="P:WJP.Web.PassWordInfo.oldPassWord">
+            <summary>
+            旧密码
+            </summary>
+        </member>
+        <member name="P:WJP.Web.PassWordInfo.newPassWord">
+            <summary>
+            新密码
+            </summary>
+        </member>
+        <member name="P:WJP.Web.PassWordInfo.inputNewPassWord">
+            <summary>
+            确认新密码
+            </summary>
+        </member>
+        <member name="T:WJP.Web.UserBaseInfo">
+            <summary>
+            用户基本信息
+            </summary>
+        </member>
+        <member name="T:WJP.Web.UserBaseService`1">
+            <summary>
+            用户基础服务
+            </summary>
+        </member>
+        <member name="F:WJP.Web.UserBaseService`1._infoCacheName">
+            <summary>
+            session与cookie记录名称
+            </summary>
+        </member>
+        <member name="M:WJP.Web.UserBaseService`1.#ctor(System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="cacheName"></param>
+        </member>
+        <member name="M:WJP.Web.UserBaseService`1.saveModelToSessionAndCookie(`0,System.Boolean,System.Func{`0,WJP.Web.UserBaseInfo})">
+            <summary>
+            将对象储存到session和cookie中
+            </summary>
+            <param name="model">对象</param>
+            <param name="isInCookie">是否储存到cookie</param>
+            <param name="toUserBase">将对象转换为UserBase</param>
+        </member>
+        <member name="M:WJP.Web.UserBaseService`1.getCurrentModel(System.Func{WJP.Web.UserBaseInfo,`0})">
+            <summary>
+            获取当前模型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WJP.Web.UserBaseService`1.clear">
+            <summary>
+            清空
+            </summary>
+        </member>
+        <member name="P:WJP.Web.UserBaseService`1.sessionModel">
+            <summary>
+            session对象
+            </summary>
+        </member>
+        <member name="P:WJP.Web.UserBaseService`1.cookieModel">
+            <summary>
+            cookie对象
+            </summary>
+        </member>
+        <member name="P:WJP.Web.UserBaseService`1.isSession">
+            <summary>
+            获取当前Session状态
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:WJP.Web.UserBaseService`1.isCookie">
+            <summary>
+            获取当前Cookie状态
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:WJP.Web.ValidateCode">
+            <summary>
+            验证码 线条干扰(蓝色)
+            </summary>
+        </member>
+        <member name="T:WJP.Web.ValidateImage">
+            <summary>
+            生成图片
+            </summary>
+        </member>
+        <member name="M:WJP.Web.ValidateImage.validatebyte(System.String)">
+            <summary>
+            生成验证图片
+            </summary>
+            <param name="CodeName"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
